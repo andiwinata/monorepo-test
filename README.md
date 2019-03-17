@@ -10,6 +10,14 @@
 # Update process
 
 Example 1:
+- All packages start with v1.0.1
 - When `orange` added a new function that is not used for main then committed it
 - Since `main` is dependant on `orange`, when running `lerna changed`, both `orange` and `main` is subject to change for next release
 - Since `lerna` mode is not independent, both packages are updated to same version (leaving other package to be the same version)
+
+Example 2:
+- Packages start with v1.0.2 for `main` and `orange`
+- `apple` is still in v1.0.1
+- Now, change something in `apple` package and then commit it
+- `lerna changed` will say both `main` and `apple` are changed
+- `lerna version` will bump both `main` and `apple` to v1.0.3 (`apple` skips through v1.0.2, and leave `orange` still at v1.0.2
