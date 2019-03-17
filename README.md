@@ -24,6 +24,8 @@ Example 2:
 
 # Output from lerna commands:
 
+Lerna version skipping through version:
+
 ```bash
 $ D:\GitProjects\monorepo\node_modules\.bin\lerna version
 lerna notice cli v3.13.1
@@ -41,4 +43,26 @@ lerna info execute Skipping GitHub releases
 lerna info git Pushing tags...
 lerna success version finished
 Done in 17.47s.
+```
+
+Testing since the latest release change: (this case there is a change in `apple` package)
+https://github.com/lerna/lerna/tree/master/core/filter-options
+
+```bash
+$ yarn lerna run test --since
+yarn run v1.12.3
+$ D:\GitProjects\monorepo\node_modules\.bin\lerna run test --since
+lerna notice cli v3.13.1
+lerna info Looking for changed packages since v1.0.4
+lerna info Executing command in 2 packages: "yarn run test"
+lerna info run Ran npm script 'test' in '@monorepo-test/apple' in 0.4s:
+$ echo 'apple' && exit 0
+'apple'
+lerna info run Ran npm script 'test' in '@monorepo-test/main' in 0.3s:
+$ echo 'main' && exit 0
+'main'
+lerna success run Ran npm script 'test' in 2 packages in 0.7s:
+lerna success - @monorepo-test/apple
+lerna success - @monorepo-test/main
+Done in 1.52s.
 ```
