@@ -1,6 +1,6 @@
 {
   "name": "@monorepo-test/main",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@monorepo-test/apple": "^1.0.3",
-    "@monorepo-test/orange": "^1.0.2",
+    "@monorepo-test/apple": "^1.0.4",
+    "@monorepo-test/orange": "^1.0.4",
     "react": "^16.8.4"
   }
 }
