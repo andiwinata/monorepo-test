@@ -21,3 +21,24 @@ Example 2:
 - Now, change something in `apple` package and then commit it
 - `lerna changed` will say both `main` and `apple` are changed
 - `lerna version` will bump both `main` and `apple` to v1.0.3 (`apple` skips through v1.0.2, and leave `orange` still at v1.0.2
+
+# Output from lerna commands:
+
+```bash
+$ D:\GitProjects\monorepo\node_modules\.bin\lerna version
+lerna notice cli v3.13.1
+lerna info current version 1.0.3
+lerna info Looking for changed packages since v1.0.3
+? Select a new version (currently 1.0.3) Patch (1.0.4)
+
+Changes:
+ - @monorepo-test/apple: 1.0.3 => 1.0.4
+ - @monorepo-test/main: 1.0.3 => 1.0.4
+ - @monorepo-test/orange: 1.0.2 => 1.0.4
+
+? Are you sure you want to create these versions? Yes
+lerna info execute Skipping GitHub releases
+lerna info git Pushing tags...
+lerna success version finished
+Done in 17.47s.
+```
