@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.8.4"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   }
 }

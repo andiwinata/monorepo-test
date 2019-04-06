@@ -13,5 +13,8 @@
     "@monorepo-test/apple": "^1.0.5",
     "@monorepo-test/orange": "^1.0.4",
     "react": "^16.8.4"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   }
 }

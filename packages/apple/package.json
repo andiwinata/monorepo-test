@@ -12,5 +12,8 @@
   "dependencies": {
     "react": "^16.8.4",
     "rxjs": "^6.4.0"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   }
 }
