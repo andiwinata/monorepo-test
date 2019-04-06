@@ -86,10 +86,25 @@ yarn lerna publish from-package
 yarn lerna publish
 ```
 
-Next attempt
+## Next attempt
 
 - In a branch, do `lerna version --no-git-tag-version`
 - Then manually commit and push
 - Then in master do something to tag previous commit
 - But what is that something (?)
 - Running `lerna version` and `lerna publish` will attempt to publish a new version ahead of the `package.json`
+
+## Next attempt
+
+- In the branch `fix/test-bump-main`
+- Made change to `package/main` file
+- Run `lerna version` to also tag the changes from (v1.0.6 to v1.0.7)
+- At this point, version @monorepo-test/main@1.0.7 is registered in the repository, even though it's on the other branch
+
+- Go back to master
+- Then go make another branch `fix/test-bump-main-conflict`
+- Made change to `package/main` file
+- Run `lerna version` again (v1.0.6 to v1.0.7)
+- (!) It blows up because the tag exists already
+
+So learning: The tagging must happen at master, but the versioning is ideally done manually in separate branch
