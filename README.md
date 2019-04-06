@@ -77,6 +77,19 @@ Done in 1.52s.
 ```bash
 # Command that has been tried
 yarn lerna version --no-git-tag-version
+# this one is looking both at git tag and package.json
+# Though this wont be nice if you are using private repo
+# lerna WARN Unable to determine published version, assuming "@monorepo-test/main" unpublished.
+# lerna WARN Unable to determine published version, assuming "@monorepo-test/apple" unpublished.
+# lerna WARN Unable to determine published version, assuming "@monorepo-test/orange" unpublished.
 yarn lerna publish from-package
 yarn lerna publish
 ```
+
+Next attempt
+
+- In a branch, do `lerna version --no-git-tag-version`
+- Then manually commit and push
+- Then in master do something to tag previous commit
+- But what is that something (?)
+- Running `lerna version` and `lerna publish` will attempt to publish a new version ahead of the `package.json`
