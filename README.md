@@ -66,3 +66,17 @@ lerna success - @monorepo-test/apple
 lerna success - @monorepo-test/main
 Done in 1.52s.
 ```
+
+## Publishing dependencies
+
+- `lerna version` relies on `lerna changed`
+- `lerna` will always look for git tag, so without git tag every packages will be treated as changed
+
+- Use verdaccio to test private repository
+
+```bash
+# Command that has been tried
+yarn lerna version --no-git-tag-version
+yarn lerna publish from-package
+yarn lerna publish
+```
