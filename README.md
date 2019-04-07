@@ -109,7 +109,9 @@ yarn lerna publish
 
 So learning: The tagging must happen at master, but the versioning is ideally done manually in separate branch
 
-## Next attempt
+## Next attempt Conventional commits
+
+First case (non standard commit message)
 
 - Made changes to `main@1.0.7`
 - Using `--conventional-commits --yes` for `lerna version`, but without valid commit
@@ -118,7 +120,7 @@ yarn lerna version --no-git-tag-version --no-push --conventional-commits --yes
 ```
 - It will generates changelog, and it seems bump the correct minor version
 
-Other case:
+Other case (feat:)
 - If conventional commit is correct, tried with `git commit -m "feat: test conventional commits"`
 - The version bumps up to `@1.1.0`
 - and the generated changelog is:
@@ -128,3 +130,9 @@ Other case:
 
 * test conventional commits ([1fb26b5](https://github.com/andiwinata/monorepo-test/commit/1fb26b5))
 ```
+
+Other case (fix:)
+- Commit with `git commit -m "fix: test bump fix"`
+- Then `yarn lerna version --conventional-commits --yes`
+- The version bumped up `@monorepo-test/main@1.0.7` -> `@1.0.8`
+- Then pushed to master with changelog generated and tagged
