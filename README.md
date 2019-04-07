@@ -108,3 +108,23 @@ yarn lerna publish
 - (!) It blows up because the tag exists already
 
 So learning: The tagging must happen at master, but the versioning is ideally done manually in separate branch
+
+## Next attempt
+
+- Made changes to `main@1.0.7`
+- Using `--conventional-commits --yes` for `lerna version`, but without valid commit
+```sh
+yarn lerna version --no-git-tag-version --no-push --conventional-commits --yes
+```
+- It will generates changelog, and it seems bump the correct minor version
+
+Other case:
+- If conventional commit is correct, tried with `git commit -m "feat: test conventional commits"`
+- The version bumps up to `@1.1.0`
+- and the generated changelog is:
+
+```md
+### Features
+
+* test conventional commits ([1fb26b5](https://github.com/andiwinata/monorepo-test/commit/1fb26b5))
+```
